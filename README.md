@@ -77,7 +77,8 @@ python3 -m http.server 8000
 You can also test the project online by clicking [here](https://fchavonet.github.io/creative_coding-pixal_art_planet_generator/).
 
 ![Screenshot](./assets/images/screenshots/desktop_page_screenshot-dark.webp)
-![Screenshot](./assets/images/screenshots/pixal_art_planet_generator.gif)
+
+<img src="./assets/images/screenshots/pixel-art-planets.gif" alt="Screenshot">
 
 ## What's Next?
 
