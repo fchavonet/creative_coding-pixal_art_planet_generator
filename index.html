@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full w-full m-0  overflow-hidden" data-theme="black">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Pixel Art Planet Generator</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style.css">
 
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -22,20 +19,28 @@
     <script src="./script.js" defer></script>
 </head>
 
-<body>
-    <main>
+<body class="h-full w-full m-0 bg-[#05070c]! text-[#e6e8ed]!overflow-hidden [color-scheme:dark]">
+    <main class="h-full w-full">
+        <canvas id="starfield" class="fixed inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
+        <canvas id="planet" class="fixed inset-0 h-full w-full pointer-events-auto touch-none [image-rendering:pixelated]" role="img" aria-label="Animated randomly generated pixel art planet"></canvas>
+
         <!-- TOP CONTAINER -->
-        <div class="fixed top-0 left-0 w-full h-auto px-8 py-6 flex flex-row justify-end items-center">
-            <!-- TOGGLE MODE BUTTON -->
-            <label class="swap swap-rotate">
-                <input type="checkbox" class="theme-controller" value="black" />
-                <i class="bi bi-sun-fill swap-on"></i>
-                <i class="bi bi-moon-stars-fill swap-off"></i>
-            </label>
+        <div class="fixed top-0 left-0 w-full h-auto px-8 py-6 flex flex-col justify-center items-start gap-4 z-2">
+            <button id="generate-button" class="btn btn-warning btn-sm gap-2 shadow-none" type="button" data-theme="light">
+                <i class="bi bi-arrow-repeat text-lg" aria-hidden="true"></i>
+                Generate
+            </button>
+
+            <p class="text-xs">
+                <span class="[@media(hover:none)_and_(pointer:coarse)]:hidden">You can press <kbd class="kbd mx-1 text-xs" data-theme="light">SPACE</kbd> to generate and move your your mouse to play with the light...</span>
+                <span class="hidden [@media(hover:none)_and_(pointer:coarse)]:inline">Drag your finger to play with the light...</span>
+            </p>
         </div>
 
+        <p id="load-error" class="fixed top-22 left-8 right-8 p-2 text-xs text-black rounded bg-red-500 [&[hidden]]:hidden!" role="alert"></p>
+
         <!-- BOTTOM CONTAINER -->
-        <div class="fixed left-0  bottom-0 w-full h-auto px-8 py-6 flex flex-row justify-between items-center">
+        <div class="fixed left-0 bottom-0 w-full h-auto px-8 py-6 flex flex-row justify-between items-center">
             <!-- GitHub link -->
             <a class="tooltip tooltip-right" data-tip="Click to visit the GitHub repository." href="https://github.com/fchavonet/creative_coding-pixal_art_planet_generator" target="_blank">
                 <img src="https://img.shields.io/github/stars/fchavonet/creative_coding-pixal_art_planet_generator?style=social&label=GitHub%20Stars" alt="GitHub Stars">
@@ -46,21 +51,6 @@
                 www.fchavonet.dev
             </a>
         </div>
-
-        <!-- RESPONSIVE WARNING -->
-        <dialog id="responsive-warning" class="modal backdrop-blur-xl">
-            <div class="modal-box max-w-xs flex flex-col justify-center items-center gap-4 text-center rounded-xl bg-base-300">
-                <i class="bi bi-aspect-ratio text-4xl"></i>
-
-                <p class="text-lg font-semibold -mt-2">
-                    This web application is designed for larger screens.
-                </p>
-
-                <p class="text-xs">
-                    A mobile-friendly version is coming soon...
-                </p>
-            </div>
-        </dialog>
     </main>
 </body>
 
