@@ -78,7 +78,7 @@ You can also test the project online by clicking [here](https://fchavonet.github
 
 ![Screenshot](./assets/images/screenshots/desktop_page_screenshot-dark.webp)
 
-<img src="./assets/images/screenshots/pixel-art-planets.gif" alt="Screenshot">
+<img src="./assets/images/screenshots/pixal_art_planet_generator.gif" alt="Screenshot">
 
 ## What's Next?
 
