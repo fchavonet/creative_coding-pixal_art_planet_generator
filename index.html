@@ -21,11 +21,8 @@
 
 <body class="h-full w-full m-0 bg-[#05070c]! text-[#e6e8ed]!overflow-hidden [color-scheme:dark]">
     <main class="h-full w-full">
-        <canvas id="starfield" class="fixed inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
-        <canvas id="planet" class="fixed inset-0 h-full w-full pointer-events-auto touch-none [image-rendering:pixelated]" role="img" aria-label="Animated randomly generated pixel art planet"></canvas>
-
         <!-- TOP CONTAINER -->
-        <div class="fixed top-0 left-0 w-full h-auto px-8 py-6 flex flex-col justify-center items-start gap-4 z-2">
+        <div class="fixed top-0 left-0 w-full h-auto p-4 flex flex-col justify-center items-start gap-4 z-2">
             <button id="generate-button" class="btn btn-warning btn-sm gap-2 shadow-none" type="button" data-theme="light">
                 <i class="bi bi-arrow-repeat text-lg" aria-hidden="true"></i>
                 Generate
@@ -39,8 +36,11 @@
 
         <p id="load-error" class="fixed top-22 left-8 right-8 p-2 text-xs text-black rounded bg-red-500 [&[hidden]]:hidden!" role="alert"></p>
 
+        <canvas id="starfield" class="fixed inset-0 h-full w-full pointer-events-none" aria-hidden="true"></canvas>
+        <canvas id="planet" class="fixed inset-0 h-full w-full pointer-events-auto touch-none [image-rendering:pixelated]" role="img" aria-label="Animated randomly generated pixel art planet"></canvas>
+
         <!-- BOTTOM CONTAINER -->
-        <div class="fixed left-0 bottom-0 w-full h-auto px-8 py-6 flex flex-row justify-between items-center">
+        <div class="fixed left-0 bottom-0 w-full h-auto p-4 flex flex-row justify-between items-center">
             <!-- GitHub link -->
             <a class="tooltip tooltip-right" data-tip="Click to visit the GitHub repository." href="https://github.com/fchavonet/creative_coding-pixal_art_planet_generator" target="_blank">
                 <img src="https://img.shields.io/github/stars/fchavonet/creative_coding-pixal_art_planet_generator?style=social&label=GitHub%20Stars" alt="GitHub Stars">
